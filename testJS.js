@@ -25,10 +25,10 @@
 // let y = false;
 
 // const x = ()=>{
-    // console.log(c);
+// console.log(c);
 // };
 // function func() {
-    // console.log(b);
+// console.log(b);
 // };
 
 // console.log('e ---> ' + typeof e);
@@ -325,16 +325,18 @@
 // };
 
 
-////////////////////////////////////////// type casting ( Coercion ) /////////////////////////////////////////////////
+////////////////////////////////////////// type casting ( Coercion ) -- ( loosely typed ) /////////////////////////////////////////////////
 
 
 // let a = "10";
+// let a1 = "10";
 // let b = 20;
 // let c = true;
 
 
 // console.log(a + b + c); // --> 1020true ( cast to string )
 // console.log(b + c + a); // --> 2110 ( add 20 + 1 then write 10 )
+// console.log(a + a1); // --> 2110 ( add 20 + 1 then write 10 )
 
 
 // var x = 3;
@@ -373,14 +375,18 @@
 
 
 // function add(number) {
-//   if (number <= 0) {
-//     return 0;
-//   } else {
-//     return number + add(number - 1);
-//   }
-// }
+//     if (number <= 0) {
+//         return 0;
+//     } else {
+//         // console.log(number);
+//         var result = number + add(number - 1);
+//         console.log(`this is number ${number} and the result is ${result}`);
+//         // return number + add(number - 1);
+//         return result;
+//     };
+// };
 
-// console.log(add(3));
+// console.log(add(4));
 
 
 //////////////////////////////////////// sum the positive numbers in the array /////////////////////////////////////////////
@@ -549,6 +555,187 @@
 // console.log(obj1);
 
 
-////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
 
 
+// var str1 = "Hello JavaScript from str1";
+// var str2 = new String("Hello JavaScript from str2");
+// var str3 = String("Hello JavaScript from str3")
+
+// console.log(str1.reverse());
+// console.log(typeof str1);
+// console.log(typeof str2);
+// console.log(typeof str3);
+// console.log(str1 === str2);
+// console.log(str1 === str3);
+// console.log(str2 === str3);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// console.log(arr1.join('')); // 123456789
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// var today = new Date();
+// console.log(today.getTime());
+// console.log(today.getDate());
+// console.log(today.getMonth());
+// console.log(today.getFullYear());
+// console.log(today.toISOString());
+// console.log(today.toDateString());
+// console.log(today.toTimeString());
+// console.log(today.toUTCString());
+// console.log(today.toLocaleString());
+// console.log(today.toLocaleTimeString());
+// console.log(today.toLocaleDateString());
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// var x = "12345ABC";
+// (function () {
+//     console.log(x);
+//     var x = "12345";
+// })(); // undefined
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function foo() {
+//     var a = b = 2;
+//     a++;
+//     return a;
+// };
+
+// console.log(foo()); 3
+// console.log(typeof a); // undefined --> global variable without value
+// console.log(typeof b); // number
+
+
+/////////////////////////////////////////// Hoisting ///////////////////////////////////////// 
+
+
+// add(1, 2); // 3
+// function add(a, b) {
+//     var result = a + b;
+//     return console.log(result);
+// };
+
+// myAdd(1, 2); // error 
+// var myAdd = function (a, b) {
+//     var result = a + b;
+//     return console.log(result);
+// };
+// myAdd(1, 2); // 3
+
+// console.log(arr); //undefined
+// var arr = [1, "2", "monty", 22, function (a, b) { var result = a + b; return console.log(result); }, "Abou-trika"];
+// arr[4](1, 2); // 3
+
+// function newAdd(a, b, c) {
+//     return function () {
+//         return a + b + c;
+//     };
+// };
+// var result = newAdd(1, 2, 3);
+// console.log(result()); // 6
+// console.log(newAdd(1, 2, 3)); // [Function: sum]
+
+
+/////////////////////////////////////////// Arguments /////////////////////////////////////////
+
+
+// var fun = function (a, b) {
+//     console.log(`length of arguments:  ${arguments.length}`);
+//     let sum = 0;
+//     for (let i = 0; i < arguments.length; i++) {
+//         sum += arguments[i];
+
+//     }
+//     return sum;
+// };
+// console.log(fun(1, 2));
+// console.log(fun(1, 2, 3));
+// console.log(fun(1, 2, 3, 4, 5, 6));
+
+
+/////////////////////////////////////////// Scope Chain /////////////////////////////////////////
+
+
+// var globalNum = 10;
+// function firstScope(num1, num2) {
+//     console.log("first level");
+//     console.log(globalNum); // from global scope
+//     console.log(num1);
+//     console.log(num2);
+//     // console.log(num3); // not defined
+//     // console.log(num4); // not defined
+//     // console.log(num5); // not defined
+//     console.log("-------------------------------");
+//     function secondScope(num3) {
+//         console.log("second level");
+//         console.log(globalNum); // from global scope
+//         console.log(num1); // from firstScope
+//         console.log(num2); // from firstScope
+//         console.log(num3);
+//         // console.log(num4); // not defined
+//         // console.log(num5); // not defined
+//         console.log("-------------------------------");
+//         function thirdScope(num4) {
+//             console.log("third level");
+//             var num5 = 5;
+//             console.log(globalNum); // from global scope
+//             // globalNum = 100; // new assign
+//             // console.log(globalNum); // from thirdScope
+//             console.log(num1); // from firstScope
+//             console.log(num2); // from firstScope
+//             console.log(num3); // from secondScope
+//             console.log(num4);
+//             console.log(num5);
+//             console.log("-------------------------------");
+//             let result = globalNum + num1 + num2 + num3 + num4 + num5;
+//             console.log("===== final result =====");
+//             return console.log(result);
+//         };
+//         thirdScope(4);
+//     };
+//     secondScope(3);
+// };
+// firstScope(1, 2);
+
+
+/////////////////////////////////////////// closure /////////////////////////////////////////
+
+
+// var b = 2;
+// function outerFunc(x, y) {
+//     var z = 10;
+//     var a = 1;
+//     for (var i = 0; i < arguments.length; i++) {
+//         console.log(arguments[i]);
+//     }
+//     console.log(a);
+//     return function (a, b) {
+//         var w = 20;
+//         for (var i = 0; i < arguments.length; i++) {
+//             console.log(arguments[i]);
+//         }
+//         return x + y + z + a + b + w;
+//     };
+// };
+// console.log(outerFunc(5, 6)(3, 4));
+// var result = outerFunc(5, 6);
+// console.log(result);
+// console.log(result(3, 4));
+
+
+//////////////////////////////////////////////////////////////////////////////////////
