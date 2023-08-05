@@ -1,63 +1,3 @@
-////////////////////////////////////////////////////////// pure function ///////////////////////////////////////////////////////////////////////
-
-
-// let x = 5
-// y = ++x;
-// console.log(y)
-
-// function pure(x) {
-//     return ++x;
-// }
-
-// console.log(pure(5));
-// let newX = pure(5);
-// console.log(newX)
-
-
-////////////////////////////////////////////////////////// typeof & operator ///////////////////////////////////////////////////////////////////////
-
-
-// const a = [1];
-// const b = [1];
-// const c = ["1"];
-// const e = a;
-// let w = 0;
-// let y = false;
-
-// const x = ()=>{
-// console.log(c);
-// };
-// function func() {
-// console.log(b);
-// };
-
-// console.log('e ---> ' + typeof e);
-// console.log('a ---> ' + typeof a);
-// console.log("x ---> " + typeof x);
-// console.log("func ---> " + typeof func);
-
-// console.log(a === b); // false
-// console.log(a == b); // false
-
-// console.log(a === c); // false
-// console.log(a == c); // false
-
-// console.log(a === e); // true
-// console.log(a == e); // true
-
-// console.log(0 == true); // false
-// console.log([] == true); // false
-// console.log(0 == []); // true
-// console.log('0' == []); // false
-// console.log(0 === []); // false
-
-// console.log(x() == func());
-// console.log(x() === func());
-
-// console.log(w == y);
-// console.log(w === y);
-
-
 // ////////////////////////////////////////////////////////// this ///////////////////////////////////////////////////////////////////////
 
 
@@ -93,79 +33,6 @@
 // var getAddress = obj1.getAddress;
 // var obj2 = { name: "akshay"};
 // obj2.getAddress(); // error because obj2 does not have function getAddress
-
-
-////////////////////////////////////////////////////////// var & const & let ( hoisting ) ///////////////////////////////////////////////////////////////////////
-
-
-// var x = 1;
-
-// function getX() {
-//   return console.log(x);
-// }
-
-// getX();
-
-// function getName() {
-//   return console.log(x);
-// }
-
-// getName();
-
-// (function getX() {
-//   var x = 1;
-//     return console.log(x);
-// })();
-
-// console.log(x)
-
-// (function getName() {
-//     return console.log(x); // error x is not defined
-// })();
-
-// if(true) {
-//     var x = 1
-// }
-
-// console.log(x) // 1
-
-// if(true) {
-//     const x = 1
-//     let y = 2
-// }
-
-// console.log(y); // y is not defined
-// console.log(x); // x is not defined
-
-// function person () {
-//   console.log(name); // undefined
-//   console.log(age); // age is not defined
-//   let age = 24;
-//   var name = "montaser";
-// }
-
-// person();
-
-// console.log(name); // name is not defined
-// console.log(age); // age is not defined
-
-// function doSomething() {
-//   x = 33;
-//   console.log(x);
-//   var x;
-// }
-// doSomething();
-
-// var x;
-// console.log(x); // Outputs "undefined" since the initialization of "x" is not hoisted
-// x = 23;
-
-// function person() {
-//   console.log(name);
-//   var name = "montaesr";
-// };
-
-// person();
 
 
 //////////////////////////////// second big //////////////////////////////////
@@ -294,11 +161,14 @@
 // const array = [1, 2, 3, 4, 5];
 // const string = array.join("");
 // console.log(string); // "12345"
+// console.log(typeof string); // string
 
 
 // const array2 = [1, 2, 3, 4, 5];
-// const string = JSON.stringify(array2); // convert array to string 
+// const string = JSON.stringify(array2); // convert the array to string 
 // console.log(string); // "[1,2,3,4,5]"
+// console.log(typeof string); // string
+
 
 
 ///////////////////////////////////// this /////////////////////////////////////////
@@ -319,33 +189,16 @@
 
 
 // for (var i = 0; i < 5; i++) {
-//   setTimeout(function() {
-//     console.log(i);
-//   }, 1000);
+//     setTimeout(function () {
+//         console.log(i);
+//     }, 1000);
 // };
 
-
-////////////////////////////////////////// type casting ( Coercion ) -- ( loosely typed ) /////////////////////////////////////////////////
-
-
-// let a = "10";
-// let a1 = "10";
-// let b = 20;
-// let c = true;
-
-
-// console.log(a + b + c); // --> 1020true ( cast to string )
-// console.log(b + c + a); // --> 2110 ( add 20 + 1 then write 10 )
-// console.log(a + a1); // --> 2110 ( add 20 + 1 then write 10 )
-
-
-// var x = 3;
-// var y = "3";
-// console.log(x - y);
-
-// var a = "hello";
-// var b = "world";
-// console.log(isNaN(a - b));
+// for (let i = 0; i < 5; i++) {
+//     setTimeout(function () {
+//         console.log(i);
+//     }, 1000);
+// };
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -466,11 +319,17 @@
 
 // let num1 = 1;
 // let num2 = num1;
-// console.log(num2);
+// console.log(num2); // 1
+// console.log(num1 == num2); // true
+// console.log(num1 === num2); // true
+
+// console.log('----------------------------------------------');
 
 // num2 = 3;
-// console.log(num1);
-// console.log(num2);
+// console.log(num1); // 1
+// console.log(num2); // 3 
+// console.log(num1 == num2); // false
+// console.log(num1 === num2); // false
 
 
 ////////////////////////////////// missing number ////////////////////////////////////
@@ -516,28 +375,6 @@
 // console.log(uniqueArr);
 
 
-/////////////////////////// Closures /////////////////////////////////////
-
-
-// function outerFunction(){
-//     var count = 0;
-
-//     return function innerFunction(){
-//         count++;
-//         console.log(count);
-//     };
-// };
-
-
-// var counter1 = outerFunction();
-// var counter2 = outerFunction();
-
-// counter1();
-// counter1();
-// counter1();
-
-// counter2();
-// counter2();
 
 
 ///////////////////////////// access element in array ///////////////////////////////////
@@ -553,22 +390,6 @@
 
 // console.log(obj1[0]);
 // console.log(obj1);
-
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-
-// var str1 = "Hello JavaScript from str1";
-// var str2 = new String("Hello JavaScript from str2");
-// var str3 = String("Hello JavaScript from str3")
-
-// console.log(str1.reverse());
-// console.log(typeof str1);
-// console.log(typeof str2);
-// console.log(typeof str3);
-// console.log(str1 === str2);
-// console.log(str1 === str3);
-// console.log(str2 === str3);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -596,60 +417,6 @@
 // console.log(today.toLocaleDateString());
 
 
-/////////////////////////////////////////////////////////////////////////////////////////
-
-
-// var x = "12345ABC";
-// (function () {
-//     console.log(x);
-//     var x = "12345";
-// })(); // undefined
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-
-// function foo() {
-//     var a = b = 2;
-//     a++;
-//     return a;
-// };
-
-// console.log(foo()); 3
-// console.log(typeof a); // undefined --> global variable without value
-// console.log(typeof b); // number
-
-
-/////////////////////////////////////////// Hoisting ///////////////////////////////////////// 
-
-
-// add(1, 2); // 3
-// function add(a, b) {
-//     var result = a + b;
-//     return console.log(result);
-// };
-
-// myAdd(1, 2); // error 
-// var myAdd = function (a, b) {
-//     var result = a + b;
-//     return console.log(result);
-// };
-// myAdd(1, 2); // 3
-
-// console.log(arr); //undefined
-// var arr = [1, "2", "monty", 22, function (a, b) { var result = a + b; return console.log(result); }, "Abou-trika"];
-// arr[4](1, 2); // 3
-
-// function newAdd(a, b, c) {
-//     return function () {
-//         return a + b + c;
-//     };
-// };
-// var result = newAdd(1, 2, 3);
-// console.log(result()); // 6
-// console.log(newAdd(1, 2, 3)); // [Function: sum]
-
 
 /////////////////////////////////////////// Arguments /////////////////////////////////////////
 
@@ -668,74 +435,3 @@
 // console.log(fun(1, 2, 3, 4, 5, 6));
 
 
-/////////////////////////////////////////// Scope Chain /////////////////////////////////////////
-
-
-// var globalNum = 10;
-// function firstScope(num1, num2) {
-//     console.log("first level");
-//     console.log(globalNum); // from global scope
-//     console.log(num1);
-//     console.log(num2);
-//     // console.log(num3); // not defined
-//     // console.log(num4); // not defined
-//     // console.log(num5); // not defined
-//     console.log("-------------------------------");
-//     function secondScope(num3) {
-//         console.log("second level");
-//         console.log(globalNum); // from global scope
-//         console.log(num1); // from firstScope
-//         console.log(num2); // from firstScope
-//         console.log(num3);
-//         // console.log(num4); // not defined
-//         // console.log(num5); // not defined
-//         console.log("-------------------------------");
-//         function thirdScope(num4) {
-//             console.log("third level");
-//             var num5 = 5;
-//             console.log(globalNum); // from global scope
-//             // globalNum = 100; // new assign
-//             // console.log(globalNum); // from thirdScope
-//             console.log(num1); // from firstScope
-//             console.log(num2); // from firstScope
-//             console.log(num3); // from secondScope
-//             console.log(num4);
-//             console.log(num5);
-//             console.log("-------------------------------");
-//             let result = globalNum + num1 + num2 + num3 + num4 + num5;
-//             console.log("===== final result =====");
-//             return console.log(result);
-//         };
-//         thirdScope(4);
-//     };
-//     secondScope(3);
-// };
-// firstScope(1, 2);
-
-
-/////////////////////////////////////////// closure /////////////////////////////////////////
-
-
-// var b = 2;
-// function outerFunc(x, y) {
-//     var z = 10;
-//     var a = 1;
-//     for (var i = 0; i < arguments.length; i++) {
-//         console.log(arguments[i]);
-//     }
-//     console.log(a);
-//     return function (a, b) {
-//         var w = 20;
-//         for (var i = 0; i < arguments.length; i++) {
-//             console.log(arguments[i]);
-//         }
-//         return x + y + z + a + b + w;
-//     };
-// };
-// console.log(outerFunc(5, 6)(3, 4));
-// var result = outerFunc(5, 6);
-// console.log(result);
-// console.log(result(3, 4));
-
-
-//////////////////////////////////////////////////////////////////////////////////////
