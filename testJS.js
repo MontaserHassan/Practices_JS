@@ -68,6 +68,7 @@
 // var y = 10 / "5";
 // var z = 10 % "5";
 
+// console.log('------------------------------------------------------');
 // console.log(w);
 // console.log(x);
 // console.log(y);
@@ -78,6 +79,7 @@
 // var y = "5" / 10;
 // var z = "5" % 10;
 
+// console.log('------------------------------------------------------');
 // console.log(w);
 // console.log(x);
 // console.log(y);
