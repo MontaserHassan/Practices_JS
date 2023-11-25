@@ -2,7 +2,6 @@
 
 
 let i = 0;
-
 while (i < 5) {
     console.log(`Iteration ${i + 1}`);
     i++;
@@ -13,7 +12,6 @@ while (i < 5) {
 
 
 let j = 0;
-
 do {
     console.log(`Iteration ${j + 1}`);
     j++;
@@ -25,4 +23,22 @@ do {
 
 for (let i = 0; i < 5; i++) {
     console.log(`Iteration ${i + 1}`);
+};
+
+
+/////////////////////////////////////// for in {object} ///////////////////////////////////////
+
+
+const object = { a: 1, b: 2, c: 3 };
+for (const property in object) {
+    console.log(`${property}: ${object[property]}`);
+};
+
+
+/////////////////////////////////////// for of [array] ///////////////////////////////////////
+
+
+const array1 = ['a', 'b', 'c'];
+for (const element of array1) {
+    console.log(element);
 };
