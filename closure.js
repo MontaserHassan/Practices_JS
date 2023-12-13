@@ -1,10 +1,10 @@
 /////////////////////////// Closures /////////////////////////////////////
 
 
-// function outerFunction(){
+// function outerFunction() {
 //     var count = 0;
 
-//     return function innerFunction(){
+//     return function innerFunction() {
 //         count++;
 //         console.log(count);
 //     };
@@ -13,6 +13,7 @@
 
 // var counter1 = outerFunction();
 // var counter2 = outerFunction();
+// var counter3 = counter1;
 
 // counter1();
 // counter1();
@@ -20,6 +21,9 @@
 
 // counter2();
 // counter2();
+
+// counter3();
+// counter3();
 
 
 // -------------------------------------------------------------------------------------------
@@ -43,5 +47,24 @@
 // };
 // console.log(outerFunc(5, 6)(3, 4)); // 48
 // var result = outerFunc(5, 6);
-// console.log(result); // [Function (anonymous)]
+// console.log('[Function (anonymous)]: ', result); // [Function (anonymous)]
 // console.log(result(3, 4)); // 48
+
+
+// -------------------------------------------------------------------------------------------
+
+
+// function outerFunction(outerVar) {
+//     return function innerFunction(innerVar) {
+//         console.log(`Outer variable: ${outerVar}`);
+//         console.log(`Inner variable: ${innerVar}`);
+//     }
+
+//     // Returning the inner function, creating a closure
+// }
+
+// const closure1 = outerFunction('I am from closure 1');
+// const closure2 = outerFunction('I am from closure 2');
+
+// closure1('Inner variable 1');
+// closure2('Inner variable 2');
