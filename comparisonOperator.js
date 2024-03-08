@@ -44,6 +44,11 @@
 // console.log([] == '0'); // false
 // console.log([] == ''); // true
 // console.log([] === ''); // false
+// console.log([] == undefined); // false
+// console.log([] == null); // false
+
+// console.log({} == true); // false
+// console.log({} == false); // false
 
 // console.log('' == false); // true
 // console.log('' === false); // false
@@ -101,7 +106,7 @@
 
 
 // var str1 = "Hello JavaScript from str1";
-// var str2 = new String("Hello JavaScript from str2");
+// var str2 = new String("Hello JavaScript from str1");
 // var str3 = String("Hello JavaScript from str3");
 
 // console.log(str3.split('').reverse().join(''));
@@ -110,7 +115,7 @@
 // console.log(typeof str2); // Object
 // console.log(typeof str3); // String
 
-// console.log(str1 == str2); // false
+// console.log(str1 == str2); // true
 // console.log(str1 == str3); // false
 // console.log(str2 == str3); // false
 
@@ -154,7 +159,6 @@ function runFunc() {
     // console.log(['a'] + ['b'] + ['c']); // abc
     // console.log(['a'] + ['b'] - ['c']); // NaN
     // console.log(String(() => 5)); // () => 5)
-    // console.log(String(null)); // 'null'
     // console.log(String(5)); // '5'
     // console.log(String(true)); // 'true'
     // console.log(Number(true)); // 1
@@ -169,3 +173,13 @@ runFunc();
 // -----------------------------------------------------------------------------------------------------------------
 
 
+// console.log(null + 1); // 1
+// console.log(null - 1); // -1
+// console.log(undefined + 1); // NaN
+// console.log(undefined - 1); // NaN
+// console.log(undefined + null); // NaN
+// console.log(String(null)); // 'null'
+// console.log(Number(null)); // 0
+
+
+// -----------------------------------------------------------------------------------------------------------------
