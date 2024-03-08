@@ -136,3 +136,36 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 
+// let arr = [1, 2, 3];
+// let str = "1,2,3";
+// console.log(arr == str); // true --> compare between value only
+// console.log(arr === str); // false --> compare between value and data type
+
+
+// -----------------------------------------------------------------------------------------------------------------
+
+
+function runFunc() {
+    // console.log("1" + 1); // 11
+    // console.log("A" - 1); // NaN
+    // console.log(2 + "-2" + "2"); // 2-22
+    // console.log("Hello" - "World" + 78); // NaN
+    // console.log("Hello" + "78"); // Hello78
+    // console.log(['a'] + ['b'] + ['c']); // abc
+    // console.log(['a'] + ['b'] - ['c']); // NaN
+    // console.log(String(() => 5)); // () => 5)
+    // console.log(String(null)); // 'null'
+    // console.log(String(5)); // '5'
+    // console.log(String(true)); // 'true'
+    // console.log(Number(true)); // 1
+    // console.log(Number('true')); // NaN
+    // console.log(String([])); // '[]'
+    // console.log(String({})); // object
+    // console.log(String([1, 2, 3])); // '1, 2, 3'
+}
+runFunc();
+
+
+// -----------------------------------------------------------------------------------------------------------------
+
+
