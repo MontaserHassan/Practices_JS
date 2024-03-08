@@ -229,24 +229,6 @@
 // })();
 
 
-////////////////////////////// call by value //////////////////////////////////
-
-
-// let num1 = 1;
-// let num2 = num1;
-// console.log(num2); // 1
-// console.log(num1 == num2); // true
-// console.log(num1 === num2); // true
-
-// console.log('----------------------------------------------');
-
-// num2 = 3;
-// console.log(num1); // 1
-// console.log(num2); // 3 
-// console.log(num1 == num2); // false
-// console.log(num1 === num2); // false
-
-
 ////////////////////////////////// missing number ////////////////////////////////////
 
 
@@ -301,7 +283,10 @@
 
 // let n1 = 5;
 // let n2 = new Number(5); // object from Number
+// console.log('n2: ', n2);
+// console.log('typeof(n2): ', typeof (n2)); // object
 // console.log(n1 === n2); // false
+// console.log(n1 == n2); // true 
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -360,20 +345,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 
-// let count = 10;
-
-// (function innerFunc() {
-//     if (count === 10) {
-//         let count = 11;
-//         console.log('count inside condition: ', count); // 11
-//     }
-//     console.log('count outside condition: ', count); // 10
-// })();
-
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-
 // let msg = "Good morning!!";
 // msg.name = "John";
 // console.log(msg.name); // undefined
@@ -388,18 +359,18 @@
 //         x = 5;
 //     }
 // };
-// console.log(func());
+// console.log(func()); // undefined
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
 
-try {
-    setTimeout(() => {
-        console.log("start try block"); // 2
-        throw new Error(`An exception is thrown`); // throw exception
-    }, 1000);
-    console.log("End try block"); // 1
-} catch (err) {
-    console.log("Error: ", err);
-}
+// try {
+//     setTimeout(() => {
+//         console.log("start try block"); // 2
+//         throw new Error(`An exception is thrown`); // throw exception 3
+//     }, 1000);
+//     console.log("End try block"); // 1
+// } catch (err) {
+//     console.log("Error: ", err);
+// };

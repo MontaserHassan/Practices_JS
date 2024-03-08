@@ -51,9 +51,29 @@
 // (function () {
 //     var x = 43;
 //     (function random() {
-//         console.log('x-before: ', x);
+//         console.log('x-before: ', x); // undefined
 //         x++; // undefined++
-//         console.log('x: ', x);
+//         console.log('x: ', x); // NaN
 //         var x = 21;
+//         console.log('x-after: ', x); //21
 //     })();
+//     console.log('x-outer: ', x); // 43
 // })();
+// console.log('x-global: ', x); // 23
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// let count = 10;
+
+// (function innerFunc() {
+//     if (count === 10) {
+//         let count = 11;
+//         console.log('count inside condition: ', count); // 11 - scope
+//     }
+//     console.log('count outside condition: ', count); // 10
+// })();
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
