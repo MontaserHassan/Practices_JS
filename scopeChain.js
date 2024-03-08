@@ -42,3 +42,18 @@
 // };
 // firstScope(1, 2);
 
+
+/////////////////////////////////////////// Scope Chain /////////////////////////////////////////
+
+
+// var x = 23;
+
+// (function () {
+//     var x = 43;
+//     (function random() {
+//         console.log('x-before: ', x);
+//         x++; // undefined++
+//         console.log('x: ', x);
+//         var x = 21;
+//     })();
+// })();
