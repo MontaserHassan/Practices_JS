@@ -1,40 +1,3 @@
-// ////////////////////////////////////////////////////////// this ///////////////////////////////////////////////////////////////////////
-
-
-// const obj = {
-//     name: 'montaser',
-//     age:24,
-//     func1(){
-//         console.log('Declaration ---> ' + this); // current object
-//     },
-//     func2: ()=>{
-//         console.log("Arrow ---> " + this); // global object
-//     },
-//     func3: function(){
-//         console.log("Expression ---> " + this); // current object
-//     }
-// };
-
-// console.log(obj.name);
-// console.log(obj.age);
-// obj.func1();
-// obj.func2();
-// obj.func3();
-// console.log('global ---> ' + this) // global object
-
-
-// var obj1 = {
-//   address: "Mumbai,India",
-//   getAddress: function () {
-//     console.log(this.address);
-//   },
-// };
-
-// var getAddress = obj1.getAddress;
-// var obj2 = { name: "akshay"};
-// obj2.getAddress(); // error because obj2 does not have function getAddress
-
-
 //////////////////////////////// second big //////////////////////////////////
 
 
@@ -51,14 +14,6 @@
 // var word = 'montaser';
 // console.log(word.split('').reverse().join('')); // resatnom
 
-//////////////////////////////// convert string to numbers //////////////////////////////////
-
-// var numbers = ['5', '10', '3', '10', '8', '5', '8'];
-
-// var convertedNumbers = numbers.map((num) => Number(num));
-
-// console.log(convertedNumbers);  // Output: [5, 10, 3, 10, 8, 5, 8]
-
 
 //////////////////////////////// convert string to number implicitly //////////////////////////////////
 
@@ -69,10 +24,10 @@
 // var z = 10 % "5";
 
 // console.log('------------------------------------------------------');
-// console.log(w);
-// console.log(x);
-// console.log(y);
-// console.log(z);
+// console.log(w); // 5
+// console.log(x); // 50
+// console.log(y); // 2
+// console.log(z); // 0
 
 // var w = "5" - 10;
 // var x = "5" * 10;
@@ -80,25 +35,10 @@
 // var z = "5" % 10;
 
 // console.log('------------------------------------------------------');
-// console.log(w);
-// console.log(x);
-// console.log(y);
-// console.log(z);
-
-
-/////////////////////////////////////// convert number to string ///////////////////////////////////////
-
-
-// const arrayOfNumbers = [1, 2, 3, 4, 5];
-// const convertingArrayOfNumbers = arrayOfNumbers.map( (number)=> number.toString());
-// console.log(convertingArrayOfNumbers);
-
-/////////////////////////////////////// convert number to string and reverse ///////////////////////////////////////
-
-
-// const arrayOfNumbers = [1, 2, 3, 4, 5];
-// const reverseArrayOfNumbers = arrayOfNumbers.reverse().map( (number) => number.toString());
-// console.log(reverseArrayOfNumbers);
+// console.log(w); // -5
+// console.log(x); // 50
+// console.log(y); // 0.5
+// console.log(z); // 5
 
 
 /////////////////////////////////////// convert all to number, sorting and delete duplicated ///////////////////////////////////////
@@ -157,36 +97,6 @@
 // console.log(a+++b);
 
 
-////////////////////////////////////// convert array to string ///////////////////////////////////////////
-
-
-// const array = [1, 2, 3, 4, 5];
-// const string = array.join("");
-// console.log(string); // "12345"
-// console.log(typeof string); // string
-
-
-// const array2 = [1, 2, 3, 4, 5];
-// const string = JSON.stringify(array2); // convert the array to string 
-// console.log(string); // "[1,2,3,4,5]"
-// console.log(typeof string); // string
-
-
-
-///////////////////////////////////// this /////////////////////////////////////////
-
-
-// const person = {
-//   firstName: "John",
-//   lastName: "Doe",
-//   fullName: function() {
-//     return this.firstName + " " + this.lastName;
-//   }
-// };
-
-// console.log(person.fullName()); // Output: "John Doe"
-
-
 ////////////////////////////////////// setTimeout in loop /////////////////////////////////////////////////
 
 
@@ -201,6 +111,23 @@
 //         console.log(i);
 //     }, 1000);
 // };
+
+
+////////////////////////////////////// setTimeout /////////////////////////////////////////////////
+
+
+// function func1() {
+//     console.log('x: ' + x);
+//     console.log('y: ' + y);
+//     setTimeout(() => {
+//         console.log('x: ' + x);
+//         console.log('y: ' + y);
+//     }, 0);
+
+//     var x = 2;
+//     let y = 12;
+// }
+// func1();
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -260,6 +187,8 @@
 ///////////////////////////// call, bind, apply ///////////////////////////////////////
 
 
+// **************** call ******************
+
 // const person = {
 //   name: 'John',
 //   sayHello: function() {
@@ -274,6 +203,21 @@
 // person.sayHello(); // Output: Hello, John!
 
 // person.sayHello.call(anotherPerson).app; // Output: Hello, Alice!
+
+// **************** apply ******************
+
+// let hero = {
+//     powerLevel: 99,
+//     getPower() {
+//         return this.powerLevel;
+//     },
+// };
+// let getPower = hero.getPower;
+
+// let hero2 = { powerLevel: 42 };
+
+// console.log(getPower()); // undefined
+// console.log(getPower.apply(hero2)); // 42
 
 
 /////////////////////////////////// IIFE ////////////////////////////////////
@@ -337,17 +281,6 @@
 // console.log("Missing number:", missingNumber);
 
 
-////////////////////////////////// remove duplicate number without Set ////////////////////////////////////
-
-
-// const arr = [1, 2, 3, 2, 4, 2, 5];
-// const uniqueArr = arr.filter((value, index) => arr.indexOf(value) === index );
-
-// console.log(uniqueArr);
-
-
-
-
 ///////////////////////////// access element in array ///////////////////////////////////
 
 
@@ -366,9 +299,27 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 
-// var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let n1 = 5;
+// let n2 = new Number(5); // object from Number
+// console.log(n1 === n2); // false
 
-// console.log(arr1.join('')); // 123456789
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// const arr = [
+//     { x: 5, y: 6 },
+//     { x: 7, y: 8 },
+// ];
+
+// arr.filter((ele) => ele.x === 5);
+// console.log(arr); // the original array is not modified
+
+// const element = arr.filter((ele) => ele.x === 5);
+// console.log(element); // element is an array that accept condition
+
+// arr.map((ele) => (ele.x = 22));
+// console.log(arr); // the original array is modified --> x will equal 22 in all element
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -406,3 +357,49 @@
 // console.log(fun(1, 2, 3, 4, 5, 6));
 
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// let count = 10;
+
+// (function innerFunc() {
+//     if (count === 10) {
+//         let count = 11;
+//         console.log('count inside condition: ', count); // 11
+//     }
+//     console.log('count outside condition: ', count); // 10
+// })();
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// let msg = "Good morning!!";
+// msg.name = "John";
+// console.log(msg.name); // undefined
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// const func = () => {
+//     return;
+//     {
+//         x = 5;
+//     }
+// };
+// console.log(func());
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+try {
+    setTimeout(() => {
+        console.log("start try block"); // 2
+        throw new Error(`An exception is thrown`); // throw exception
+    }, 1000);
+    console.log("End try block"); // 1
+} catch (err) {
+    console.log("Error: ", err);
+}
