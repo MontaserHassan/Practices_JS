@@ -48,6 +48,25 @@
 // console.log(typeof string); // string
 
 
+function areAnagrams(str1, str2) {
+    if (str1.length !== str2.length) return false;
+    console.log('str1: ', str1);
+    console.log('str2: ', str2);
+    console.log('str1.split(""): ', str1.split(''));
+    console.log('str2.split(""): ', str2.split(''));
+    console.log('str1.split("").sort(): ', str1.split('').sort());
+    console.log('str2.split("").sort(): ', str2.split('').sort());
+    console.log('str1.split("").sort().join(""): ', str1.split('').sort().join(''));
+    console.log('str2.split("").sort().join(""): ', str2.split('').sort().join(''));
+    return str1.split('').sort().join('') === str2.split('').sort().join('');
+};
+
+var word1 = "cat";
+var word2 = "tca";
+
+console.log(areAnagrams(word1, word2)); // Output: true
+
+
 //////////////////////////////// convert string to numbers //////////////////////////////////
 
 // var numbers = ['5', '10', '3', '10', '8', '5', '8'];
