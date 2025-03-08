@@ -1,18 +1,19 @@
 //////////////////////////////// second big //////////////////////////////////
 
 
-// var numbers = [5, 10, 3, 10, 8, 5, 8];
-// var sortedArray = numbers.sort((a, b) => b - a)
-// var notDuplicated = [...new Set(sortedArray)]
+// var numbers = [5, 10, 3, 11, 10, 8, 5, 8];
+// var sortedArray = numbers.sort((a, b) => b - a);
+// var notDuplicated = [...new Set(sortedArray)];
 // let secondLargest = notDuplicated[1];
-// console.log(secondLargest); // 8
+// console.log('secondLargest: ', secondLargest); // 10
 
 
 //////////////////////////////// reverse word //////////////////////////////////
 
 
-// var word = 'montaser';
-// console.log(word.split('').reverse().join('')); // resatnom
+// var word = 'montaser mohamed';
+// console.log(word.split('').reverse().join('')); // demahom resatnom
+// console.log(word.split(' ').reverse().join(' ')); // mohamed montaser
 
 
 //////////////////////////////// convert string to number implicitly //////////////////////////////////
@@ -229,36 +230,34 @@
 // })();
 
 
-////////////////////////////////// missing number ////////////////////////////////////
+////////////////////////////////// missing number from array ////////////////////////////////////
 
 
 // function findMissingNumber(arr) {
-//   var n = arr.length + 1;
-//   var expectedSum = (n * (n + 1)) / 2;
-//   console.log(expectedSum);
-
-//   var actualSum = arr.reduce((acc, curr) => acc + curr, 0);
-//   console.log(actualSum)
-
-//   var missingNumber = expectedSum - actualSum;
-//   console.log(missingNumber);
-
-//   return missingNumber;
+//     var n = arr.length + 1;
+//     var expectedSum = (n * (n + 1)) / 2;
+//     var actualSum = arr.reduce((acc, curr) => acc + curr, 0);
+//     var missingNumber = expectedSum - actualSum;
+//     return missingNumber;
 // }
 
 // function findMissingNumber(arr) {
 //     var missingNumber;
-//     for (var i = 0; i < arr.length - 1; i++) {
-//         if ((arr[i]+1) !== arr[i + 1]) {
+//     const sortedArr = [...new Set(arr)].sort((a, b) => a - b);
+//     for (var i = 0; i < sortedArr.length - 1; i++) {
+//         console.log('(arr[i] + 1): ', (arr[i] + 1));// refer to first element + 1 
+//         console.log('sortedArr[i + 1]: ', sortedArr[i + 1]); // refer to second element
+//         if ((arr[i] + 1) !== arr[i + 1]) {
 //             missingNumber = arr[i] + 1;
 //             break;
-//         }
-//     }
+//         };
+//     };
 //     return missingNumber;
-// }
+// };
 
 
-// var arr = [1, 2, 3, 5];
+// var arr = [2, 3, 5, 6];
+// var arr = [2, 3, 5, 5, 6];
 // var missingNumber = findMissingNumber(arr);
 // console.log("Missing number:", missingNumber);
 
@@ -374,3 +373,122 @@
 // } catch (err) {
 //     console.log("Error: ", err);
 // };
+
+
+///////////////////////////// find first non repeating character ///////////////////////////////////
+
+
+// function firstNonRepeatingChar(str) {
+//     let charCount = {};
+
+//     // Count occurrences of each character
+//     for (let char of str) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+
+//     // Find the first non-repeating character
+//     for (let char of str) {
+//         if (charCount[char] === 1) {
+//             return char;
+//         }
+//     }
+
+//     return null;
+// }
+
+// function firstNonRepeatingChar(str) {
+//     for (let i = 0; i < str.length; i++) {
+//         console.log('str.indexOf(str[i]): ', str.indexOf(str[i]));
+//         console.log('str.lastIndexOf(str[i]): ', str.lastIndexOf(str[i]));
+//         if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+//             return str[i];
+//         }
+//     }
+//     return "not found any character is not repeating";
+// };
+
+// // Example
+// console.log(firstNonRepeatingChar("aabccdeff")); // Output: "b"
+// console.log(firstNonRepeatingChar("aabbcc"));    // Output: null
+
+
+///////////////////////////// Check if Two Strings are Anagrams ///////////////////////////////////
+
+
+// function areAnagrams(str1, str2) {
+//     if (str1.length !== str2.length) return false;
+//     console.log('str1: ', str1);
+//     console.log('str2: ', str2);
+//     console.log('str1.split(""): ', str1.split(''));
+//     console.log('str2.split(""): ', str2.split(''));
+//     console.log('str1.split("").sort(): ', str1.split('').sort());
+//     console.log('str2.split("").sort(): ', str2.split('').sort());
+//     console.log('str1.split("").sort().join(""): ', str1.split('').sort().join(''));
+//     console.log('str2.split("").sort().join(""): ', str2.split('').sort().join(''));
+//     return str1.split('').sort().join('') === str2.split('').sort().join('');
+// };
+
+// var word1 = "cat";
+// var word2 = "tca";
+
+// console.log(areAnagrams(word1, word2)); // Output: true
+
+
+///////////////////////////// Find the Longest Word in a Sentence ///////////////////////////////////
+
+
+// function longestWord(sentence) {
+//     let words = sentence.split(" ");
+//     return words.reduce((longest, word) => {
+//         console.log('longest: ', longest);
+//         console.log('word: ', word);
+//         return word.length > longest.length ? word : longest;
+//     }, "");
+// }
+
+// const result = longestWord("The quick brown fox jumpss over the lazy dog");
+// console.log('result: ', result); // Output: "jumpss"
+
+
+///////////////////////////// Count Vowels in a String ///////////////////////////////////
+
+
+// function countVowels(str) {
+//     let vowels = "aeiouAEIOU";
+//     return str.split("").filter(char => vowels.includes(char)).length;
+// }
+
+// console.log(countVowels("JavaScriptlOve")); // Output: 5
+
+
+/////////////////////////////  ///////////////////////////////////
+
+
+
+
+
+/////////////////////////////  ///////////////////////////////////
+
+
+
+
+
+/////////////////////////////  ///////////////////////////////////
+
+
+
+
+
+/////////////////////////////  ///////////////////////////////////
+
+
+
+
+
+/////////////////////////////  ///////////////////////////////////
+
+
+
+
+
+/////////////////////////////  ///////////////////////////////////
